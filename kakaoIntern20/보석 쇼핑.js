@@ -45,7 +45,7 @@ function solution2(gems) {
 }
 
 
-function solution(gems) {
+function solution3(gems) {
     const cnt = new Set(gems).size;
     const gemMap = new Map();
     var answer = [1, gems.length];
@@ -60,8 +60,36 @@ function solution(gems) {
     return answer;
 }
 
-console.log(solution2(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]))
+function solution(gems) {
+    const cnt = new Set(gems).size;
+    var ans = [1, gems.length];
+
+    var l = 0, r = 0;
+    const hit = new Map();
+    hit.set(gems[0], 1)
+
+    while (l < gems.length && r < gems.length) {
+        if (hit.size === cnt) {
+            if(ans[1] - ans[0] > r - l)
+                ans = [l + 1, r + 1]
+
+            hit.set(gems[l], hit.get(gems[l]) - 1);
+            if (hit.get(gems[l]) === 0) 
+                hit.delete(gems[l])
+
+            l++;
+        }
+        else {
+            r++;
+            const right = hit.get(gems[r]);
+            hit.set(gems[r], right ? right + 1 : 1);
+        }
+    }
+    return ans;
+}
+
+console.log(solution3(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]))
 // [3, 7]
 
-// console.log(solution(["XYZ", "XYZ", "XYZ"]))
+console.log(solution3(["XYZ", "XYZ", "XYZ"]))
 // [1, 1]
