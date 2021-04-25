@@ -2,7 +2,7 @@
 // 정확성: 20.0 효율성: 10.0
 function solutionFail1(people, limit) {
     var answer = 0;
-    people = people.sort().map(p => [p, 0]);
+    people = people.sort((a,b) => a-b).map(p => [p, 0]);
     people.forEach(([p, v], i) => {
         if (v) return;
 
