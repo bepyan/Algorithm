@@ -24,7 +24,7 @@ function solution(numbers) {
         if (v < 2) return ac;
 
         var isPrime = true;
-        for (var i = 2; i < Math.sqrt(v); i++)
+        for (var i = 2; i <= Math.sqrt(v); i++)
             if (v % i === 0) {
                 isPrime = false;
                 break;
