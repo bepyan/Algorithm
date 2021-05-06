@@ -1,4 +1,3 @@
-package stack;
 // https://www.acmicpc.net/problem/1918
 
 import java.io.*;
