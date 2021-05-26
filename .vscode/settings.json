@@ -5,6 +5,7 @@
         "vector": "cpp"
     },
     "java.project.sourcePaths": [
-        "tree"
+        "tree",
+        "sort"
     ]
 }
