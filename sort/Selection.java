@@ -1,5 +1,6 @@
 public class Selection {
-    public static <T extends Comparable<T>> void sort(T[] a) {
+    // 이후에 있는 최솟값과 swap하여 정렬
+    public static <T extends Comparable<T>> void sort(T a[]) {
         int len = a.length;
         for (int i = 0; i < len; i++) {
             int minIdx = i;
